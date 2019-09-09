@@ -76,6 +76,7 @@ variables: |-
           pass: bSEs7K2v8Q5QvWuw
           priv: "*.*:ALL"
           host: "%"
+
       mysql_port: 3306
       mysql_bind_address: "0.0.0.0"
       mysql_root_db_pass: f9RRXh4r3JuxWbtZ3twWjjAVmBLtCPrb9v
