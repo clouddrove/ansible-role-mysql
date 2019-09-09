@@ -1,0 +1,7 @@
+---
+
+- name: Install the mysql packages.
+  apt:
+    name: [ "python-selinux", "mysql-server", "python-mysqldb" ]
+    state: installed
+    update_cache: true

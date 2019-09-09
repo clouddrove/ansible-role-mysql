@@ -1,0 +1,17 @@
+---
+
+- name: restart mysql
+  service:
+    name: mysql
+    state: restarted
+    enabled: true
+- name: reload mysql
+  service:
+    name: mysql
+    state: reloaded
+    enabled: true
+- name: start mysql
+  service:
+    name: mysql
+    state: started
+    enabled: true

@@ -1,0 +1,36 @@
+---
+
+- name: ensure anonymous users are not in the database
+  mysql_user:
+    name: ''
+    host: "{{ item }}"
+    state: absent
+  with_items:
+    - localhost
+    - "{{ ansible_hostname }}"
+
+- name: remove the test database
+  mysql_db:
+    name: test
+    state: absent
+
+- name: Create the database's
+  mysql_db:
+    name: "{{ item.name }}"
+    encoding: "{{ item.encoding | default( 'utf8') }}"
+    collation: "{{ item.collation | default( 'utf8_general_ci') }}"
+    state: present
+  with_items:
+    - "{{ mysql_db }}"
+  when: mysql_db|lower() != 'none'
+
+- name: Create the database users
+  mysql_user:
+    name: "{{ item.name }}"
+    password: "{{ item.pass|default('foobar') }}"
+    priv: "{{ item.priv|default('*.*:ALL') }}"
+    state: present
+    host: "{{ item.host | default( 'localhost') }}"
+  with_items:
+    - "{{ mysql_users }}"
+  when: mysql_users|lower() != 'none'
