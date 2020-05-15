@@ -5,4 +5,3 @@
     name: ["python-selinux", "mysql-server", "python-mysqldb"]
     state: installed
     update_cache: true
-
