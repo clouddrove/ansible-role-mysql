@@ -2,13 +2,13 @@
 
 # DB Configurations
 mysql_db:
-     - name: live-app
+     - name: Live-app
        collation: utf8_general_ci
        encoding: utf8
 
 # User Configurations
 mysql_users:
-     - name: app_user
+     - name: App_user
        pass: bSEs7K2v8Q5QvWuw
        priv: "*.*:ALL"
        host: "%"

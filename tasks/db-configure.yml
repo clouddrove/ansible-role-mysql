@@ -1,6 +1,6 @@
 ---
 
-- name: ensure anonymous users are not in the database
+- name: Ensure anonymous users are not in the database
   mysql_user:
     name: ''
     host: "{{ item }}"
@@ -9,9 +9,9 @@
     - localhost
     - "{{ ansible_hostname }}"
 
-- name: remove the test database
+- name: Remove the test database
   mysql_db:
-    name: test
+    name: Test
     state: absent
 
 - name: Create the database's
