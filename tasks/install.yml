@@ -1,7 +1,7 @@
 ---
 
 - name: Install the mysql packages.
-  apt:
+  ansible.builtin.apt:
     name: ["python-selinux", "mysql-server", "python-mysqldb"]
-    state: installed
+    state: present
     update_cache: true

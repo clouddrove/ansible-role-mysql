@@ -1,12 +1,12 @@
 ---
 
-- name: setup group
-  group:
+- name: Setup group
+  ansible.builtin.group:
     name: "{{ mysql_group }}"
     system: true
 
-- name: setup user
-  user:
+- name: Setup user
+  ansible.builtin.user:
     name: "{{ mysql_user }}"
     system: true
     createhome: false
